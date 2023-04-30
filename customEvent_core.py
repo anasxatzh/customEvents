@@ -57,7 +57,6 @@ class CustomEvent(Event):
     def _get_isValid(self) -> "bool":
         return _core.CustomEvent__get_isValid(self)
 
-# Register CustomEvent in _core:
 _core.CustomEvent_swigregister(CustomEvent)
 
 def CustomEvent_classType() -> "char const *":
@@ -122,7 +121,7 @@ class CustomEventArgs(EventArgs):
     def _get_isValid(self) -> "bool":
         return _core.CustomEventArgs__get_isValid(self)
 
-# Register CustomEventArgs in _core:
+
 _core.CustomEventArgs_swigregister(CustomEventArgs)
 
 def CustomEventArgs_classType() -> "char const *":
