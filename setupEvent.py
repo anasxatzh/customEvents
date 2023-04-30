@@ -22,8 +22,8 @@ class MyThread(threading.Thread):
 
     def run(self):
         global ui, app
-        onStartupCompleted = StartupCompletedHandler() # onStartupCompleted --> ApplicationEventHandler
-        app.startupCompleted.add(onStartupCompleted) # app.startupCompleted --> ApplicationEvent
+        onStartupCompleted = StartupCompletedHandler()
+        app.startupCompleted.add(onStartupCompleted)
         local_handlers.append(onStartupCompleted)
         isInitialized = app._get_isStartupComplete()
         app.fireCustomEvent(eventId_, str(isInitialized))
@@ -77,7 +77,6 @@ class StartupCompletedHandler(adsk.core.ApplicationEventHandler):
 
 def run(context):
     try:
-        # This will run the start function in each of your commands as defined in commands/__init__.py
         commands.start()
 
   
