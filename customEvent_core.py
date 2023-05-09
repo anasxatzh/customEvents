@@ -18,7 +18,9 @@ class CustomEvent(Event):
         return _core.CustomEvent___eq__(self, rhs)
 
 
-    def __ne__(self, rhs: "CustomEvent") -> "bool":
+    def __ne__(self, 
+               rhs: "CustomEvent"
+              ) -> "bool":
 
         if not isinstance(self, type(rhs)):
            return True
@@ -29,13 +31,18 @@ class CustomEvent(Event):
     @staticmethod
     def classType() -> "char const *":
         return _core.CustomEvent_classType()
-    __swig_destroy__ = _core.delete_CustomEvent
 
-    def add(self, handler: "CustomEventHandler") -> "bool":
+    
+    
+    def add(self, 
+            handler: "CustomEventHandler"
+           ) -> "bool":
 
         return _core.CustomEvent_add(self, handler)
 
-    def remove(self, handler: "CustomEventHandler") -> "bool":
+    def remove(self, 
+               handler: "CustomEventHandler"
+              ) -> "bool":
 
         return _core.CustomEvent_remove(self, handler)
 
@@ -63,7 +70,7 @@ def CustomEvent_classType() -> "char const *":
     return _core.CustomEvent_classType()
 
 
-CustomEvent.eventId = property(CustomEvent._get_eventId, doc="Returns id")
+CustomEvent.eventId = property(CustomEvent._get_eventId, doc="id")
 
 
 CustomEvent.cast = lambda arg: arg if isinstance(arg, CustomEvent) else None
@@ -85,7 +92,9 @@ class CustomEventArgs(EventArgs):
     def __deref__(self) -> "adsk::core::CustomEventArgs *":
         return _core.CustomEventArgs___deref__(self)
 
-    def __eq__(self, rhs: "CustomEventArgs") -> "bool":
+    def __eq__(self, 
+               rhs: "CustomEventArgs"
+              ) -> "bool":
 
         if not isinstance(self, type(rhs)) :
            return False
@@ -103,6 +112,8 @@ class CustomEventArgs(EventArgs):
         return _core.CustomEventArgs___ne__(self, rhs)
 
 
+    
+    
     @staticmethod
     def classType() -> "char const *":
         return _core.CustomEventArgs_classType()
@@ -128,7 +139,7 @@ def CustomEventArgs_classType() -> "char const *":
     return _core.CustomEventArgs_classType()
 
 
-CustomEventArgs.additionalInfo = property(CustomEventArgs._get_additionalInfo, doc="Passes info to the addIn")
+CustomEventArgs.additionalInfo = property(CustomEventArgs._get_additionalInfo, doc="addInInfo
 
 
 CustomEventArgs.cast = lambda arg: arg if isinstance(arg, CustomEventArgs) else None
@@ -139,10 +150,12 @@ CustomEventArgs.cast = lambda arg: arg if isinstance(arg, CustomEventArgs) else 
 # HANDLER
 
 class CustomEventHandler(object):
-    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="T")
     __repr__ = _swig_repr
 
-    def notify(self, eventArgs: "CustomEventArgs") -> "void":
+    def notify(self, 
+               eventArgs: "CustomEventArgs"
+              ) -> "void":
         return _core.CustomEventHandler_notify(self, eventArgs)
 
     def __init__(self):
@@ -150,7 +163,9 @@ class CustomEventHandler(object):
             _self = None
         else:
             _self = self
-        _core.CustomEventHandler_swiginit(self, _core.new_CustomEventHandler(_self, ))
+        _core.CustomEventHandler_swiginit(self, 
+                                          _core.new_CustomEventHandler(_self, )
+                                         )
     __swig_destroy__ = _core.delete_CustomEventHandler
     def __disown__(self):
         self.this.disown()
